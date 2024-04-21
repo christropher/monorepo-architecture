@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto.products;
+option go_package = "proto/products";
+
+message ProductRequest {
+  string id = 1;
+}
+
+message ProductResponse {
+  string id = 1;
+  string description = 2;
+  string product_type = 3;
+  string quantity = 4;
+}
+
+service ProductService {
+  rpc GetRecords(ProductRequest) returns (ProductResponse) {};
+}
